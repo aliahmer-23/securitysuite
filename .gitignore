@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Generated reports
+reports/*.json
+reports/*.html
+
+# Old SecuritySuite backups
+securitysuite_backup.py
+securitysuite_v1.0_backup.py
+securitysuite_v1.1.1_backup.py
+securitysuite_v2.0_backup.py
+securitysuite_v2.1_stable.py
+
+# Temporary files
+*.tmp
+*.log

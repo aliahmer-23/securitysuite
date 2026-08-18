@@ -1,0 +1,43 @@
+{
+    "account": {
+        "root_access_key": true,
+        "mfa_enabled": false
+    },
+
+    "iam": {
+        "unused_credentials": 3,
+        "administrative_users": 2,
+        "password_min_length": 10,
+        "password_requires_symbols": false
+    },
+
+    "s3": {
+        "bucket_name": "company-data",
+        "public_access_blocked": false,
+        "encryption_enabled": false,
+        "versioning_enabled": false
+    },
+
+    "security_groups": [
+        {
+            "id": "sg-001",
+            "name": "web-server",
+            "rules": [
+                {
+                    "protocol": "tcp",
+                    "port": 22,
+                    "source": "0.0.0.0/0"
+                },
+                {
+                    "protocol": "tcp",
+                    "port": 80,
+                    "source": "0.0.0.0/0"
+                }
+            ]
+        }
+    ],
+
+    "logging": {
+        "cloudtrail_enabled": false
+    }
+}
