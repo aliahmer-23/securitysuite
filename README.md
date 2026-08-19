@@ -403,14 +403,46 @@ The v2.2.0 core release is considered complete for portfolio purposes.
 Potential future research directions could include:
 
 -   optional cloud-provider API integrations;
--   CI/CD security checks;
 -   additional configuration policies;
 -   richer asset inventory;
 -   standardized finding formats;
--   automated regression tests.
 
 These are future possibilities rather than requirements for the current
 release.
+
+------------------------------------------------------------------------
+
+## Automated Testing & CI/CD
+
+SecuritySuite includes an automated regression test suite covering the
+core functionality of all three components.
+
+### Test Coverage
+
+-   SecuritySuite integration and unified risk scoring.
+-   NetScout target validation, scan profiles, port-risk classification,
+    and service identification.
+-   CloudGuard configuration assessment, security findings, risk scoring,
+    and remediation behavior.
+
+The current test suite contains **31 automated tests**.
+
+Run the complete test suite locally with:
+
+``` bash
+python3 -m unittest discover -s tests -v
+```
+
+### Continuous Integration
+
+SecuritySuite uses **GitHub Actions** for continuous integration. The
+complete automated test suite runs automatically on:
+
+-   pushes to the `main` branch;
+-   pull requests targeting `main`.
+
+This provides continuous validation of SecuritySuite changes and helps
+detect regressions before new code is integrated.
 
 ------------------------------------------------------------------------
 
