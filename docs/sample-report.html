@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>SecuritySuite Security Assessment</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    margin: 0;
+    background: #eef2f7;
+    color: #1f2937;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.hero,
+.section {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    margin-bottom: 22px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+.hero {
+    background: #111827;
+    color: white;
+}
+
+.subtitle {
+    color: #cbd5e1;
+}
+
+.meta {
+    line-height: 1.8;
+    margin-top: 18px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.card {
+    background: #1f2937;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.card strong {
+    display: block;
+    font-size: 28px;
+    margin-top: 6px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+}
+
+th,
+td {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #f8fafc;
+}
+
+.severity {
+    font-weight: 800;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+}
+
+.critical,
+.high {
+    color: #991b1b;
+    background: #fee2e2;
+}
+
+.medium {
+    color: #92400e;
+    background: #fef3c7;
+}
+
+.low {
+    color: #1e40af;
+    background: #dbeafe;
+}
+
+.info {
+    color: #374151;
+    background: #e5e7eb;
+}
+
+.small {
+    color: #64748b;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>SecuritySuite Security Assessment</h1>
+
+<div class="subtitle">
+Network + Cloud Security Assessment Platform
+v2.2.0
+</div>
+
+<div class="meta">
+
+<strong>Scan ID:</strong>
+e1bc2e82-78ee-409a-9f15-841b42073c7f
+
+<br>
+
+<strong>Target:</strong>
+N/A
+
+<br>
+
+<strong>Mode:</strong>
+cloud-only
+
+<br>
+
+<strong>Network Profile:</strong>
+standard
+
+<br>
+
+<strong>Cloud Config:</strong>
+cloud_environment.json
+
+<br>
+
+<strong>Started:</strong>
+2026-08-20T14:50:49.623943
+
+<br>
+
+<strong>Completed:</strong>
+2026-08-20T14:50:49.657240
+
+<br>
+
+<strong>Duration:</strong>
+0.03 seconds
+
+</div>
+
+<div class="cards">
+
+
+        <div class="card">
+        Initial Risk
+        <strong>76/100</strong>
+        </div>
+
+        <div class="card">
+        Initial Rating
+        <strong>CRITICAL</strong>
+        </div>
+
+        <div class="card">
+        Initial Findings
+        <strong>12</strong>
+        </div>
+
+        <div class="card">
+        Residual Risk
+        <strong>0/100</strong>
+        </div>
+
+        <div class="card">
+        Residual Rating
+        <strong>PASS</strong>
+        </div>
+
+        <div class="card">
+        Remaining Findings
+        <strong>0</strong>
+        </div>
+
+        <div class="card">
+        Risk Reduction
+        <strong>76 points</strong>
+        </div>
+        
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2>Component Risk Scores</h2>
+
+<table>
+
+<tr>
+<th>Component</th>
+<th>Status</th>
+<th>Version</th>
+<th>Risk Score</th>
+<th>Overall</th>
+<th>Findings</th>
+</tr>
+
+<tr>
+<td>NetScout</td>
+<td>NOT_RUN</td>
+<td>N/A</td>
+<td>0/100</td>
+<td>PASS</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>CloudGuard</td>
+<td>SUCCESS</td>
+<td>6.0.0</td>
+<td>0/100</td>
+<td>PASS</td>
+<td>0</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="section">
+
+<h2>Network Service Inventory</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>Port</th>
+<th>State</th>
+<th>Service</th>
+<th>Application</th>
+<th>HTTP Status</th>
+</tr>
+</thead>
+
+<tbody>
+
+        <tr>
+            <td colspan="5">
+                No open network services detected.
+            </td>
+        </tr>
+        
+</tbody>
+
+</table>
+
+</div>
+
+
+<div class="section">
+
+<h2>Unified Security Findings</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Source</th>
+<th>ID</th>
+<th>Severity</th>
+<th>Category</th>
+<th>Service</th>
+<th>Finding</th>
+<th>Observation</th>
+<th>Evidence</th>
+<th>Recommendation</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+        <tr>
+            <td colspan="9">
+                No findings detected.
+            </td>
+        </tr>
+        
+</tbody>
+
+</table>
+
+</div>
+
+
+        <div class="section">
+        <h2>CloudGuard Remediation Simulation</h2>
+
+        <ul>
+            <li>ACCOUNT-001</li><li>ACCOUNT-002</li><li>IAM-001</li><li>IAM-002</li><li>IAM-003</li><li>IAM-004</li><li>S3-001</li><li>S3-002</li><li>S3-003</li><li>SG-001-sg-001</li><li>SG-003-sg-001</li><li>LOG-001</li>
+        </ul>
+
+        <p>
+            <strong>Before risk:</strong>
+            76/100
+            &nbsp;&nbsp;
+
+            <strong>After risk:</strong>
+            0/100
+            &nbsp;&nbsp;
+
+            <strong>Risk reduction:</strong>
+            76 points
+        </p>
+        </div>
+        
+
+
+<div class="section">
+
+<h2>Risk Methodology</h2>
+
+<p>
+CRITICAL findings contribute 25 points.
+</p>
+
+<p>
+HIGH findings contribute 10 points.
+</p>
+
+<p>
+MEDIUM findings contribute 5 points.
+</p>
+
+<p>
+LOW findings contribute 2 points.
+</p>
+
+<p>
+INFO findings contribute 0 points.
+</p>
+
+<p>
+The combined score is capped at 100.
+</p>
+
+<p class="small">
+Component scores remain visible separately from the combined SecuritySuite score.
+Each component may retain its own engine-specific scoring thresholds; the unified
+SecuritySuite score uses the methodology shown above.
+</p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

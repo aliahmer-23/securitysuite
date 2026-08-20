@@ -984,6 +984,127 @@ def save_html_report(
 
     remediation_html = ""
 
+    # Report presentation values.
+    # During remediation runs, clearly distinguish the original
+    # assessment risk from the residual post-remediation risk.
+    if remediation:
+        initial_risk_score = remediation.get(
+            "before_risk_score",
+            summary["risk_score"]
+        )
+        residual_risk_score = remediation.get(
+            "after_risk_score",
+            summary["risk_score"]
+        )
+        risk_reduction = remediation.get(
+            "risk_reduction",
+            0
+        )
+
+        before_summary = cloudguard.get(
+            "before_summary",
+            {}
+        )
+
+        initial_risk_rating = before_summary.get(
+            "overall",
+            "N/A"
+        )
+
+        initial_findings = remediation.get(
+            "before_findings",
+            0
+        )
+
+        residual_findings = remediation.get(
+            "after_findings",
+            summary["total"]
+        )
+
+        score_cards_html = f"""
+        <div class="card">
+        Initial Risk
+        <strong>{initial_risk_score}/100</strong>
+        </div>
+
+        <div class="card">
+        Initial Rating
+        <strong>{html.escape(str(initial_risk_rating))}</strong>
+        </div>
+
+        <div class="card">
+        Initial Findings
+        <strong>{initial_findings}</strong>
+        </div>
+
+        <div class="card">
+        Residual Risk
+        <strong>{residual_risk_score}/100</strong>
+        </div>
+
+        <div class="card">
+        Residual Rating
+        <strong>{html.escape(summary["overall_risk"])}</strong>
+        </div>
+
+        <div class="card">
+        Remaining Findings
+        <strong>{residual_findings}</strong>
+        </div>
+
+        <div class="card">
+        Risk Reduction
+        <strong>{risk_reduction} points</strong>
+        </div>
+        """
+    else:
+        score_cards_html = f"""
+        <div class="card">
+        Combined Score
+        <strong>{summary["risk_score"]}/100</strong>
+        </div>
+
+        <div class="card">
+        Overall Risk
+        <strong>{html.escape(summary["overall_risk"])}</strong>
+        </div>
+
+        <div class="card">
+        Critical
+        <strong>{summary["critical"]}</strong>
+        </div>
+
+        <div class="card">
+        High
+        <strong>{summary["high"]}</strong>
+        </div>
+
+        <div class="card">
+        Medium
+        <strong>{summary["medium"]}</strong>
+        </div>
+
+        <div class="card">
+        Low
+        <strong>{summary["low"]}</strong>
+        </div>
+
+        <div class="card">
+        Network
+        <strong>{summary["network_findings"]}</strong>
+        </div>
+
+        <div class="card">
+        Cloud
+        <strong>{summary["cloud_findings"]}</strong>
+        </div>
+
+        <div class="card">
+        Total
+        <strong>{summary["total"]}</strong>
+        </div>
+        """
+
     if remediation:
         fixed_items = "".join(
             f"<li>{html.escape(str(item))}</li>"
@@ -1206,68 +1327,7 @@ v{VERSION}
 
 <div class="cards">
 
-<div class="card">
-Combined Score
-<strong>
-{summary['risk_score']}/100
-</strong>
-</div>
-
-<div class="card">
-Overall Risk
-<strong>
-{html.escape(summary['overall_risk'])}
-</strong>
-</div>
-
-<div class="card">
-Critical
-<strong>
-{summary['critical']}
-</strong>
-</div>
-
-<div class="card">
-High
-<strong>
-{summary['high']}
-</strong>
-</div>
-
-<div class="card">
-Medium
-<strong>
-{summary['medium']}
-</strong>
-</div>
-
-<div class="card">
-Low
-<strong>
-{summary['low']}
-</strong>
-</div>
-
-<div class="card">
-Network
-<strong>
-{summary['network_findings']}
-</strong>
-</div>
-
-<div class="card">
-Cloud
-<strong>
-{summary['cloud_findings']}
-</strong>
-</div>
-
-<div class="card">
-Total
-<strong>
-{summary['total']}
-</strong>
-</div>
+{score_cards_html}
 
 </div>
 

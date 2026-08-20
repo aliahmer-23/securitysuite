@@ -1,0 +1,129 @@
+{
+  "schema_version": "2.2",
+  "tool": "SecuritySuite",
+  "version": "2.2.0",
+  "scan_id": "e1bc2e82-78ee-409a-9f15-841b42073c7f",
+  "target": null,
+  "mode": "cloud-only",
+  "network_profile": "standard",
+  "started": "2026-08-20T14:50:49.623943",
+  "completed": "2026-08-20T14:50:49.657240",
+  "duration_seconds": 0.03,
+  "cloud_config": "cloud_environment.json",
+  "component_status": {
+    "netscout": "NOT_RUN",
+    "cloudguard": "SUCCESS"
+  },
+  "components": {
+    "netscout": {
+      "tool": "NetScout",
+      "version": null,
+      "schema_version": null,
+      "return_code": null,
+      "status": "NOT_RUN",
+      "error": null,
+      "scan_id": null,
+      "target": null,
+      "profile": null,
+      "services": [],
+      "open_ports": [],
+      "findings": [],
+      "risk": {
+        "score": 0,
+        "rating": "PASS",
+        "counts": {
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 0,
+          "info": 0
+        }
+      },
+      "statistics": {},
+      "raw_output": ""
+    },
+    "cloudguard": {
+      "tool": "CloudGuard",
+      "version": "6.0.0",
+      "schema_version": "1.0",
+      "return_code": 0,
+      "status": "SUCCESS",
+      "error": null,
+      "scan_id": "541239a0-69ab-4b4d-9fb3-4c19a14a0930",
+      "mode": "LOCAL_CONFIG_REMEDIATION",
+      "source": "cloud_environment.json",
+      "summary": {
+        "risk_score": 0,
+        "raw_score": 0,
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "info": 0,
+        "total": 0,
+        "overall": "PASS"
+      },
+      "findings": [],
+      "remediation": {
+        "simulated": true,
+        "fixed_findings": [
+          "ACCOUNT-001",
+          "ACCOUNT-002",
+          "IAM-001",
+          "IAM-002",
+          "IAM-003",
+          "IAM-004",
+          "S3-001",
+          "S3-002",
+          "S3-003",
+          "SG-001-sg-001",
+          "SG-003-sg-001",
+          "LOG-001"
+        ],
+        "total_fixed": 12,
+        "before_risk_score": 76,
+        "after_risk_score": 0,
+        "risk_reduction": 76,
+        "before_findings": 12,
+        "after_findings": 0
+      },
+      "raw_output": "",
+      "before_summary": {
+        "risk_score": 76,
+        "raw_score": 76,
+        "critical": 0,
+        "high": 5,
+        "medium": 4,
+        "low": 3,
+        "info": 0,
+        "total": 12,
+        "overall": "CRITICAL"
+      },
+      "timing": {
+        "started_at": "2026-08-20T10:50:49.653998+00:00",
+        "completed_at": "2026-08-20T10:50:49.654205+00:00",
+        "duration_seconds": 0.0002
+      },
+      "cloud_access": {
+        "aws_account_required": false,
+        "aws_credentials_required": false,
+        "aws_api_access": false,
+        "cloud_resources_accessed": false,
+        "cloud_charges_generated": false
+      }
+    }
+  },
+  "combined_summary": {
+    "risk_score": 0,
+    "raw_score": 0,
+    "overall_risk": "PASS",
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 0,
+    "total": 0,
+    "network_findings": 0,
+    "cloud_findings": 0
+  }
+}
