@@ -911,7 +911,7 @@ def main():
                 print(f"    {args.config}")
 
             environment = load_config(args.config)
-            source = str(Path(args.config).expanduser().resolve())
+            source = Path(args.config).name
 
             if not args.quiet:
                 print("[+] Configuration validated")

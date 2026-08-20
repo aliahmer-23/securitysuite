@@ -298,9 +298,7 @@ def load_netscout_report(process_result):
     result["return_code"] = (
         process_result.get("return_code")
     )
-    result["raw_output"] = (
-        process_result.get("stdout", "")
-    )
+    result["raw_output"] = ""
 
     if process_result.get("return_code") != 0:
         result["status"] = "FAILED"
@@ -415,9 +413,7 @@ def load_cloudguard_report(process_result):
     result["return_code"] = (
         process_result.get("return_code")
     )
-    result["raw_output"] = (
-        process_result.get("stdout", "")
-    )
+    result["raw_output"] = ""
 
     if process_result.get("return_code") != 0:
         result["status"] = "FAILED"
@@ -788,7 +784,7 @@ def save_json_report(
             2
         ),
         "cloud_config": (
-            str(cloud_config)
+            Path(cloud_config).name
             if cloud_config
             else None
         ),
@@ -1189,7 +1185,7 @@ v{VERSION}
 <br>
 
 <strong>Cloud Config:</strong>
-{html.escape(str(cloud_config) if cloud_config else 'N/A')}
+{html.escape(Path(cloud_config).name if cloud_config else 'N/A')}
 
 <br>
 
